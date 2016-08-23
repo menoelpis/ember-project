@@ -5,8 +5,18 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    minifyCSS: {
+      enabled: false
+    },
+    minifyJS: {
+      enabled: false
+    },
+    fingerprint: {
+      prepend: 'http://www.example.com'
+    }
   });
 
+  app.import('bower_components/moment/moment.js');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
